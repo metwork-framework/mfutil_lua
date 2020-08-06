@@ -1,21 +1,13 @@
 # mfutil_lua
 
-[//]: # (automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/README.md)
+[//]: # (automatically generated from https://github.com/metwork-framework/github_organization_management/blob/master/common_files/README.md)
 
 **Status (master branch)**
 
 
 
-
 [![GitHub CI](https://github.com/metwork-framework/mfutil_lua/workflows/CI/badge.svg?branch=master)](https://github.com/metwork-framework/mfutil_lua/actions?query=workflow%3ACI&branch=master)
 [![Maintenance](https://github.com/metwork-framework/resources/blob/master/badges/maintained.svg)]()
-
-
-[//]: # (TABLE_OF_CONTENTS_PLACEHOLDER)
-
-
-
-
 
 
 
