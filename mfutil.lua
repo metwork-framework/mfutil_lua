@@ -1,22 +1,16 @@
 local _M = {}
 
+local str = require "resty.string"
+local resty_random = require "resty.random"
+
 local ffi = require("ffi")
 ffi.cdef[[
-char *mfutil_get_unique_hexa_identifier();
-void g_free(void *data);
 int link(const char *oldpath, const char *newpath);
-long mfutil_get_file_size(const char *filepath);
 ]]
-local mfutil = ffi.load("mfutil")
 
 function _M.get_unique_hexa_identifier()
-   if mfutil == nil then
-       return nil
-    end
-    local cres = mfutil.mfutil_get_unique_hexa_identifier()
-    local res = ffi.string(cres)
-    mfutil.g_free(cres)
-    return res
+    local random = resty_random.bytes(16)
+    return str.to_hex(random)
 end
 
 function _M.link(oldpath, newpath)
@@ -37,11 +31,12 @@ function _M.exit_with_ngx_error(code, message, log_message)
 end
 
 function _M.get_file_size(filepath)
-    if mfutil == nil then
-        return nil
-    end
-    local cres = mfutil.mfutil_get_file_size(filepath)
-    return tonumber(cres)
+    local file = assert(io.open(filepath, "r"))
+    local current = file:seek()
+    local size = file:seek("end")
+    file:seek("set", current)
+    assert(file:close())
+    return size
 end
 
 return _M
