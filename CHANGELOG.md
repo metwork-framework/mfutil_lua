@@ -2,7 +2,9 @@
 
 ## v0.0.2 (2020-11-23)
 
-- No interesting change
+### New Features
+
+- first version
 
 ## 0.0.1 (2019-08-05)
 
@@ -12,6 +14,8 @@
 
 ## v0.0.1 (2019-08-05)
 
-- No interesting change
+### New Features
+
+- first version
 
 
